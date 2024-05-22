@@ -35,6 +35,9 @@ tree_images = {
 st.title("Exploring Tree Biodiversity at Choate!")
 st.markdown("Created By Dana Tan")
 
+st.header("Why is Biodiversity Important?")
+st.write("Biodiversity is the variety and variability of life on Earth. As our society has progressed, it has come at the cost of the environment with the exploitation of resources, misuse of power, and the rise in consumerism. Protecting our biodiversity is crucial as it forms the basis of our natural world. Without a well-balanced ecosystem, we would have no planet to reside on. Biodiversity is also fundamental to human wellbeing and sustainable development.")
+
 col1, col2 = st.columns(2)
 
 with col1:
