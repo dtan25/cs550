@@ -1,6 +1,3 @@
-'''
-source to understand streamlit: https://www.datacamp.com/tutorial/streamlit 
-'''
 import base64
 import streamlit as st
 import streamlit.components.v1 as components
@@ -21,18 +18,18 @@ tree_info_dictionary = {
 }
 
 tree_images = {
-	'Striped Maple':['/Users/danatan/Desktop/plantmap/stripedmapletree.png','/Users/danatan/Desktop/plantmap/stripedmapleleaf.jpeg'],
-	'Eastern White Pine':['/Users/danatan/Desktop/plantmap/whitepinetree.jpeg','/Users/danatan/Desktop/plantmap/whitepineleaf.jpeg'],
-	'Flowering Dogwood':['/Users/danatan/Desktop/plantmap/dogwoodtree.webp','/Users/danatan/Desktop/plantmap/dogwoodleaf.jpeg'],
-	'Sassafras':['/Users/danatan/Desktop/plantmap/sassafrastree.jpeg','/Users/danatan/Desktop/plantmap/sassafrasleaf.jpeg'],
-	'American Beech':['/Users/danatan/Desktop/plantmap/beechtree.png','/Users/danatan/Desktop/plantmap/beechleaf.jpeg'],
-	'Norway Maple':['/Users/danatan/Desktop/plantmap/norwaymapletree.webp','/Users/danatan/Desktop/plantmap/norwaymapleleaf.jpeg'],
-	'Slippery Elm':['/Users/danatan/Desktop/plantmap/elmtree.jpeg','/Users/danatan/Desktop/plantmap/elmleaf.jpeg'],
-	'White Oak':['/Users/danatan/Desktop/plantmap/whiteoaktree.jpeg','/Users/danatan/Desktop/plantmap/whiteoakleaf.jpeg'],
-	'Sugar Maple':['/Users/danatan/Desktop/plantmap/sugarmapletree.jpeg','/Users/danatan/Desktop/plantmap/sugarmapleleaf.jpeg'],
-	'Red Spruce':['/Users/danatan/Desktop/plantmap/sprucetree.webp','/Users/danatan/Desktop/plantmap/spruceleaf.jpeg'],
-	'Red Oak':['/Users/danatan/Desktop/plantmap/redoaktree.jpeg','/Users/danatan/Desktop/plantmap/redoakleaf.jpeg'],
-	'Tuliptree':['/Users/danatan/Desktop/plantmap/tuliptree.jpeg','/Users/danatan/Desktop/plantmap/tuliptreeleaf.jpeg']
+	'Striped Maple':['stripedmapletree.png','stripedmapleleaf.jpeg'],
+	'Eastern White Pine':['whitepinetree.jpeg','whitepineleaf.jpeg'],
+	'Flowering Dogwood':['dogwoodtree.webp','dogwoodleaf.jpeg'],
+	'Sassafras':['sassafrastree.jpeg','sassafrasleaf.jpeg'],
+	'American Beech':['beechtree.png','beechleaf.jpeg'],
+	'Norway Maple':['norwaymapletree.webp','norwaymapleleaf.jpeg'],
+	'Slippery Elm':['elmtree.jpeg','elmleaf.jpeg'],
+	'White Oak':['whiteoaktree.jpeg','whiteoakleaf.jpeg'],
+	'Sugar Maple':['sugarmapletree.jpeg','sugarmapleleaf.jpeg'],
+	'Red Spruce':['sprucetree.webp','spruceleaf.jpeg'],
+	'Red Oak':['redoaktree.jpeg','redoakleaf.jpeg'],
+	'Tuliptree':['tuliptree.jpeg','tuliptreeleaf.jpeg']
 }
 
 st.title("Exploring Tree Biodiversity at Choate!")
@@ -44,8 +41,7 @@ with col1:
 	st.header("Common Trees At Choate")
 	st.caption("Click on the map to browse around the area and explore")
 
-	#source to use base 64 to render the map: https://discuss.streamlit.io/t/html-file-couldnt-be-rendered-with-components-html/10356
-	choatemap_file = open('/Users/danatan/Desktop/plantmap/choatemap.html', 'r')
+	choatemap_file = open('choatemap.html', 'r')
 	raw_html = choatemap_file.read().encode("utf-8")
 	raw_html = base64.b64encode(raw_html).decode()
 	components.iframe(f"data:text/html;base64,{raw_html}", height=400)
@@ -54,7 +50,7 @@ with col2:
 	st.header("Distribution of Trees in the US")
 	st.caption("Click on the layers to see where the trees are found")
 
-	usmap_file = open('/Users/danatan/Desktop/plantmap/usmap.html', 'r')
+	usmap_file = open('usmap.html', 'r')
 	raw_html = usmap_file.read().encode("utf-8")
 	raw_html = base64.b64encode(raw_html).decode()
 	components.iframe(f"data:text/html;base64,{raw_html}", height=400)
